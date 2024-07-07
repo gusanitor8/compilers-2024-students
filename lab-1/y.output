@@ -1,0 +1,100 @@
+Nonterminals useless in grammar
+
+    program
+    statement_list
+    statement
+    assignment
+    expression
+
+
+Terminals unused in grammar
+
+    NUMBER
+    ID
+    '='
+    '+'
+    '-'
+    '*'
+    '/'
+    ':'
+
+
+Rules useless in grammar
+
+    2 program: statement_list
+
+    3 statement_list: statement
+    4               | statement_list statement
+
+    5 statement: assignment
+    6          | expression ':'
+
+    7 assignment: ID '=' expression
+
+    8 expression: NUMBER
+    9           | ID
+   10           | expression '+' expression
+   11           | expression '-' expression
+   12           | expression '*' expression
+   13           | expression '/' expression
+
+
+Grammar
+
+    0 $accept: error_handling $end
+
+    1 error_handling: ERROR
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    '*' (42)
+    '+' (43)
+    '-' (45)
+    '/' (47)
+    ':' (58)
+    '=' (61)
+    error (256)
+    NUMBER <num> (258)
+    ID <str> (259)
+    ERROR (260) 1
+
+
+Nonterminals, with rules where they appear
+
+    $accept (12)
+        on left: 0
+    error_handling (13)
+        on left: 1
+        on right: 0
+
+
+State 0
+
+    0 $accept: . error_handling $end
+
+    ERROR  shift, and go to state 1
+
+    error_handling  go to state 2
+
+
+State 1
+
+    1 error_handling: ERROR .
+
+    $default  reduce using rule 1 (error_handling)
+
+
+State 2
+
+    0 $accept: error_handling . $end
+
+    $end  shift, and go to state 3
+
+
+State 3
+
+    0 $accept: error_handling $end .
+
+    $default  accept
