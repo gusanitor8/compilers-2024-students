@@ -1,5 +1,10 @@
 # Laboratorio 1
 
+## Entregable 
+* Los archivos resultantes de la implementación del compilador ahora están en este
+directorio. 
+* Adicionalmente también están los cambios en la gramática (el archivo `files/simle_language.y`).
+
 ## Changelog
 
 **V2, Updates:**

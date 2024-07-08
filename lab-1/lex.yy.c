@@ -449,9 +449,8 @@ char *yytext;
 #include <cstdlib>
 #include <string>
 #include "y.tab.h"
-extern void yyerror(const char *str); // Declare yyerror to avoid scope error
+#line 453 "lex.yy.c"
 #line 454 "lex.yy.c"
-#line 455 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -668,10 +667,10 @@ YY_DECL
 		}
 
 	{
-#line 8 "./files/simple_language.l"
+#line 7 "./files/simple_language.l"
 
 
-#line 675 "lex.yy.c"
+#line 674 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -730,61 +729,61 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "./files/simple_language.l"
+#line 9 "./files/simple_language.l"
 { yylval.str = new std::string(yytext);  return ID; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "./files/simple_language.l"
+#line 10 "./files/simple_language.l"
 { yylval.num = strtol(yytext, NULL, 10); return NUMBER; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "./files/simple_language.l"
+#line 11 "./files/simple_language.l"
 { return '+'; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "./files/simple_language.l"
+#line 12 "./files/simple_language.l"
 { return '-'; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 14 "./files/simple_language.l"
+#line 13 "./files/simple_language.l"
 { return '*'; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 15 "./files/simple_language.l"
+#line 14 "./files/simple_language.l"
 { return '/'; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 16 "./files/simple_language.l"
+#line 15 "./files/simple_language.l"
 { return '='; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 17 "./files/simple_language.l"
+#line 16 "./files/simple_language.l"
 { return ':'; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 18 "./files/simple_language.l"
+#line 17 "./files/simple_language.l"
 ;  // skip whitespace
 	YY_BREAK
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 19 "./files/simple_language.l"
-{ yyerror("Invalid token encountered"); return ERROR; }
+#line 18 "./files/simple_language.l"
+; /* ignore all the rest */
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 21 "./files/simple_language.l"
+#line 20 "./files/simple_language.l"
 ECHO;
 	YY_BREAK
-#line 788 "lex.yy.c"
+#line 787 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1789,7 +1788,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 21 "./files/simple_language.l"
+#line 20 "./files/simple_language.l"
 
 
 int yywrap() {

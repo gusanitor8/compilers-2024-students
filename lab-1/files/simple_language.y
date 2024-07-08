@@ -14,13 +14,14 @@ int yylex();
 %type<num> expression
 %type<num> assignment
 
-%right '='
-%left '+' '-'
-%left '*' '/'
+%left '='
+%right '+' '-'
+%right '*' '/'
 
 %%
 
-program: statement_list
+program : statement_list
+        | error { yyerror("Error: Token inválido"); }
         ;
 
 statement_list: statement
@@ -31,21 +32,22 @@ statement: assignment
     | expression ':'          { std::cout << $1 << std::endl; }
     ;
 
-assignment: ID '=' expression
-    { 
-        printf("Assign %s = %d\n", $1->c_str(), $3); 
-        $$ = vars[*$1] = $3; 
-        delete $1;
-    }
-    ;
+assignment : ID '=' expression
+            {
+                std::cout << "Assign " << *$1 << " = " << $3 << std::endl;
+                vars[*$1] = $3;
+                delete $1;
+            }
+            ;
+
 
 expression: NUMBER                  { $$ = $1; }
-    | ID                            { $$ = vars[*$1];      delete $1; }
-    | expression '+' expression     { $$ = $1 + $3; }
-    | expression '-' expression     { $$ = $1 - $3; }
-    | expression '*' expression     { $$ = $1 * $3; }
-    | expression '/' expression     { $$ = $1 / $3; }
-    ;
+            | ID                      { $$ = vars[*$1]; delete $1; }
+            | expression '+' expression     { $$ = $1 + $3; std::cout << "Suma: " << $1 << " + " << $3 << std::endl; }
+            | expression '-' expression     { $$ = $1 - $3; std::cout << "Resta: " << $1 << " - " << $3 << std::endl; }
+            | expression '*' expression     { $$ = $1 * $3; std::cout << "Multiplicación: " << $1 << " * " << $3 << std::endl; }
+            | expression '/' expression     { $$ = $1 / $3; std::cout << "División: " << $1 << " / " << $3 << std::endl; }
+            ;
 
 %%
 
