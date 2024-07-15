@@ -1,4 +1,5 @@
-5 * 5
-a = 4
-b = 6
-c = a + b
+def hola(a):
+    a = 1
+    return a
+
+hola(1)
