@@ -9,6 +9,8 @@ class ConfRoomSchedulerSemanticChecker(ConfRoomSchedulerListener):
         # Aqui debe colocar su codigo para validar que 
         # se cumpla con el requerimiento solicitado
         # Puede quitar el pass despues
+        print(ctx.reserve().TIME(0).getText())
+        print("hello")
         pass
 
 def main():
