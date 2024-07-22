@@ -35,6 +35,15 @@ class ConfRoomSchedulerListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ConfRoomSchedulerParser#listStat.
+    def enterListStat(self, ctx:ConfRoomSchedulerParser.ListStatContext):
+        pass
+
+    # Exit a parse tree produced by ConfRoomSchedulerParser#listStat.
+    def exitListStat(self, ctx:ConfRoomSchedulerParser.ListStatContext):
+        pass
+
+
     # Enter a parse tree produced by ConfRoomSchedulerParser#blank.
     def enterBlank(self, ctx:ConfRoomSchedulerParser.BlankContext):
         pass
@@ -44,12 +53,39 @@ class ConfRoomSchedulerListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by ConfRoomSchedulerParser#reserve.
-    def enterReserve(self, ctx:ConfRoomSchedulerParser.ReserveContext):
+    # Enter a parse tree produced by ConfRoomSchedulerParser#reserveNoName.
+    def enterReserveNoName(self, ctx:ConfRoomSchedulerParser.ReserveNoNameContext):
         pass
 
-    # Exit a parse tree produced by ConfRoomSchedulerParser#reserve.
-    def exitReserve(self, ctx:ConfRoomSchedulerParser.ReserveContext):
+    # Exit a parse tree produced by ConfRoomSchedulerParser#reserveNoName.
+    def exitReserveNoName(self, ctx:ConfRoomSchedulerParser.ReserveNoNameContext):
+        pass
+
+
+    # Enter a parse tree produced by ConfRoomSchedulerParser#reserveWithName.
+    def enterReserveWithName(self, ctx:ConfRoomSchedulerParser.ReserveWithNameContext):
+        pass
+
+    # Exit a parse tree produced by ConfRoomSchedulerParser#reserveWithName.
+    def exitReserveWithName(self, ctx:ConfRoomSchedulerParser.ReserveWithNameContext):
+        pass
+
+
+    # Enter a parse tree produced by ConfRoomSchedulerParser#reserveNoNameDesc.
+    def enterReserveNoNameDesc(self, ctx:ConfRoomSchedulerParser.ReserveNoNameDescContext):
+        pass
+
+    # Exit a parse tree produced by ConfRoomSchedulerParser#reserveNoNameDesc.
+    def exitReserveNoNameDesc(self, ctx:ConfRoomSchedulerParser.ReserveNoNameDescContext):
+        pass
+
+
+    # Enter a parse tree produced by ConfRoomSchedulerParser#reserveNameDesc.
+    def enterReserveNameDesc(self, ctx:ConfRoomSchedulerParser.ReserveNameDescContext):
+        pass
+
+    # Exit a parse tree produced by ConfRoomSchedulerParser#reserveNameDesc.
+    def exitReserveNameDesc(self, ctx:ConfRoomSchedulerParser.ReserveNameDescContext):
         pass
 
 
